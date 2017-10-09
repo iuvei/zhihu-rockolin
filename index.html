@@ -5,9 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
     <title>发现 - 知乎</title>
   </head>
   <body>
     <div id="app"></div>
+    <script type="text/javascript">
+    	window.onload = window.onresize = function() {
+    	  wrapHeight();
+    	}
+    	function wrapHeight() {
+    	  var mainHeight = document.getElementsByClassName("main")[0].offsetHeight;
+        var wrap = document.getElementsByClassName("wrap")[0];
+        var navHeight = document.getElementsByClassName("navigation")[0].offsetHeight;
+        wrap.style.height = mainHeight - navHeight + "px";
+    	}
+    </script>
   </body>
 </html>

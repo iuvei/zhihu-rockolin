@@ -1,21 +1,29 @@
 <template>
-  <div id="app">
-  	<h1>welcome you!</h1>
+  <div class="main">
+  	<div class="wrap">
+  		<router-view></router-view>
+  	</div>
+  	<navigation></navigation>
   </div>
 </template>
 
 <script>
+import Nav from './components/nav/Nav'
+
 export default {
+  components: {
+    'Navigation': Nav
+  }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="less" rel="stylesheet/less">
+@import './assets/css/base';
+.main {
+  width: 100%;
+  height: 100%;
+}
+.wrap {
+  overflow: auto;
 }
 </style>
